@@ -42,6 +42,11 @@ width: 50%;
   text-align: center;
 }
 
+.list-thumbnails {
+  width: 16%; 
+}
+
+
 .list-item {
   list-style: none;
 }

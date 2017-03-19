@@ -88,7 +88,7 @@ function removeFromList(itemName) {
 function displaySelectedItem() {
   resultElement = "";
   state.shoppingList.forEach(function(item){
-    resultElement += '<li class="col-sm-2">' +
+    resultElement += '<li class="list-thumbnails">' +
     '<img class="recipe-thumbnail" src="' + item.img + '">' +
     '<h6 class="selected-item-title">' + item.name + '</h6>' +
     '<button class="remove-selected-item btn btn-danger">Remove Item</button>'
