@@ -115,7 +115,7 @@ width: 50%;
 }
 
 .selected-recipes-container {
-  padding: 10px;
+  padding: 5px;
 }
 
 .selected-recipes-container h6 {
@@ -158,5 +158,5 @@ width: 50%;
   position: absolute;
 }
 .open {
-  margin-bottom: 120px;
+  margin-bottom: 350px;
 }
