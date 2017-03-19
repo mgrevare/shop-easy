@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Shop Easy</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="dist/css/flat-ui.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+  </head>
+  <body>
+    <div class="search-container col-sm-6 col-sm-offset-3">
+      <div class="title">
+      <h1>Welome to Shop Easy</h1>
+      <p><span>Step 1: </span>Search for recipes & plan your menu</p>
+      <p><span>Step 2: </span>Generate your shopping list</p>
+    </div>
+    <form class="recipe-search-form" action="#">
+    <label for="query">Search Recipes</label>
+    <input placeholder="burgers" type="text" class="js-query form-control" required>
+    <label for="Type of cuisine">Select the type of Cuisine</label>
+    <select name="js-cuisine-type" id="type-of-cuisine-dropdown">
+      <option value="main course" selected>Main course</option>
+      <option value="side dish">Side dish</option>
+      <option value="dessert">Dessert</option>
+      <option value="appetizer">Appetizer</option>
+    </select>
+    <label for="query">Have any allergies?</label>
+    <input placeholder="gluten" type="text" class="js-allergies form-control">
+    <center><button class="search-button btn btn-embossed btn-primary" type="submit">Search</button></center>
+</form>
+</div>
+
+<div id="results-div" class="js-results"></div>
+<div class="selected-recipes row">
+  <div class="selected-recipes-container">
+    <h5 class="selected-recipes-title">Current Menu</h5>
+    <ul class="current-list">
+    </ul>
+    <button type="button" class="generate-list-button btn btn-embossed btn-primary" name="generate-list">Generate My Shopping List</button>
+  </div>
+</div>
+<div class="shopping-list hidden">
+  <h1>Your Shopping List</h1>
+  <p>Here are all of the ingredients for the menu you planned. We suggest you check off the ingredients you already own before heading to the store.</p>
+  <ul class="final-shopping-list">
+  </ul>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+.results-img {
+  max-width: 380px;
+  height: 65%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 40px;
+}
+.title p {
+  margin-bottom: 2px;
+}
+
+.recipe-search-form {
+  border: 2px solid rgba(204, 204, 204, 1);
+  border-radius: 20px;
+  padding: 15px;
+}
+
+#type-of-cuisine-dropdown {
+  display: block;
+}
+
+.search-button {
+text-align: center;
+margin-top: 5px;
+width: 50%;
+
+}
+
+.hidden {
+  display: none;
+}
+
+.recipe-title {
+  font-size: 18px;
+  text-align: center;
+}
+
+.list-item {
+  list-style: none;
+}
+
+.final-list-checkbox:checked {
+  text-decoration: line-through;
+}
+
+.ingredients-list {
+  list-style: none;
+}
+
+.selected-recipes {
+  position: fixed;
+  margin: 0;
+  padding: 5px;
+  bottom: 0;
+  height: 160px;
+  width: 100%;
+  z-index: 100;
+  padding-bottom: 20px;
+  background-color: rgba(0, 0, 0, 0.37);
+}
+
+.selected-recipes-container {
+  position: relative;
+}
+
+.recipe-card {
+  height: 450px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+.recipe-card p {
+  text-align: center;
+  z-index:-1;
+}
+
+.card-ingredients {
+  display: block;
+  background-color: white;
+  border: solid 1px red;
+  z-index: 100;
+}
+
+.recipe-card:last-child {
+  margin-bottom: 120px;
+}
+
+.selected-recipes-title {
+  margin: 0;
+  position: absolute;
+  top: 2px;
+  display: inline-block;
+  right: 10px;
+  color: white;
+}
+
+.recipe-card-actions button {
+  margin: 5px;
+}
+
+.selected-recipes-container ul {
+  display: inline-block;
+}
+
+.selected-recipes-container {
+  padding: 10px;
+}
+
+.selected-recipes-container h6 {
+  margin: 0;
+  font-size: 10px;
+  color: white;
+}
+
+
+.generate-list-button {
+  display: inline-block;
+  position: absolute;
+  right: 10px;
+  top: 100px;
+}
+
+
+.selected-recipes li {
+  list-style: none;
+  display: inline-block;
+  position: relative;
+}
+
+.remove-selected-item {
+  font-size: 8px;
+}
+
+.current-list {
+  width: 100%
+}
+
+.recipe-thumbnail {
+  width: 90%;
+  position: relative;
+  max-height: 100px;
+}
+
+.thumbnail-title {
+  margin: 0;
+  position: absolute;
+}
