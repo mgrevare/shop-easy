@@ -129,7 +129,8 @@ $('#results-div').on('click', '.expand-ingredients', function(event){
   event.preventDefault();
   var identifier = $(this).parent().parent().attr('id');
   var element = $(this).parent().siblings('.ingredients-list');
-  $(this).attr("class", "retract-ingredients").text("Hide Ingredients");
+  $(this).attr("class", "retract-ingredients btn btn-embossed btn-primary").text("Hide Ingredients");
+  $(this).parent().parent().toggleClass("open")
   getIngredients(identifier, displayIngredients);
   showIngredients(element);
 });
@@ -142,7 +143,8 @@ $('#results-div').on('click', '.add-to-list', function(event){
 
 $('#results-div').on('click', '.retract-ingredients', function(event) {
   $(this).parent().siblings('.ingredients-list').slideToggle('fast');
-  $(this).attr("class", "expand-ingredients").text("See Ingredients");
+  $(this).attr("class", "expand-ingredients btn btn-embossed btn-primary").text("See Ingredients");
+  $(this).parent().parent().toggleClass("open")
 });
 
 $('.selected-recipes').on('click', '.remove-selected-item', function(event) {
