@@ -50,7 +50,7 @@ function displayIngredients(data) {
   var elementID = "#" + data.id;
   console.log(elementID);
   data.extendedIngredients.forEach(function(item) {
-    resultElement += '<li>' +
+    resultElement += '<li class="ingredients-list-card">' +
     item.originalString + '</li>'
   });
   $(elementID).children().children('.card-ingredients').html(resultElement);
@@ -155,6 +155,11 @@ $('.selected-recipes').on('click', '.remove-selected-item', function(event) {
 
 $('.selected-recipes').on('click', '.generate-list-button', function(event) {
   displayShoppingList();
+});
+
+$('.shopping-list').on('click', '.edit-button', function(event) {
+  $('.search-container, .selected-recipes, .js-results').removeClass('hidden');
+  $('.shopping-list').addClass('hidden');
 });
 
 });

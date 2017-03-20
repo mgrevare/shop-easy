@@ -118,6 +118,19 @@ width: 50%;
   padding: 5px;
 }
 
+.edit-button {
+  width: 200px;
+  margin: 50px;
+}
+
+.ingredients-list-card {
+  font-size: 12px;
+}
+
+#type-of-cuisine-dropdown {
+  font-size: 12px;
+}
+
 .selected-recipes-container h6 {
   margin: 0;
   font-size: 10px;
