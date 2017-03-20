@@ -91,7 +91,7 @@ function displaySelectedItem() {
     resultElement += '<li class="list-thumbnails">' +
     '<img class="recipe-thumbnail" src="' + item.img + '">' +
     '<h6 class="selected-item-title">' + item.name + '</h6>' +
-    '<button class="remove-selected-item btn btn-danger">Remove Item</button>'
+    '<button class="remove-selected-item btn btn-danger">Remove</button>'
     '</li>'
   });
   $('.current-list').html(resultElement);

@@ -1,3 +1,49 @@
+@media only screen and (max-width: 768px) {
+
+.selected-recipes {
+    position: fixed;
+    margin: 0;
+    padding: 5px;
+    bottom: 0;
+    height: 75px;
+    width: 100%;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.37);
+  }
+
+  .selected-recipes-container h6 {
+    display: none;
+  }
+
+  .selected-recipes-title {
+
+    display: none;
+  }
+
+  .generate-list-button {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .results-img {
+    max-width: 60px;
+    height: 90%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .list-thumbnails {
+    width: 14%;
+  }
+
+
+
+
+}
+
 .results-img {
   max-width: 380px;
   height: 65%;
@@ -42,10 +88,6 @@ width: 50%;
   text-align: center;
 }
 
-.list-thumbnails {
-  width: 16%;
-}
-
 
 .list-item {
   list-style: none;
@@ -57,18 +99,6 @@ width: 50%;
 
 .ingredients-list {
   list-style: none;
-}
-
-.selected-recipes {
-  position: fixed;
-  margin: 0;
-  padding: 5px;
-  bottom: 0;
-  height: 160px;
-  width: 100%;
-  z-index: 100;
-  padding-bottom: 20px;
-  background-color: rgba(0, 0, 0, 0.37);
 }
 
 .selected-recipes-container {
@@ -95,15 +125,6 @@ width: 50%;
 
 .recipe-card:last-child {
   margin-bottom: 170px;
-}
-
-.selected-recipes-title {
-  margin: 0;
-  position: absolute;
-  top: 2px;
-  display: inline-block;
-  right: 10px;
-  color: white;
 }
 
 .recipe-card-actions button {
@@ -138,14 +159,6 @@ width: 50%;
 }
 
 
-.generate-list-button {
-  display: inline-block;
-  position: absolute;
-  right: 10px;
-  top: 100px;
-}
-
-
 .selected-recipes li {
   list-style: none;
   display: inline-block;
@@ -154,16 +167,18 @@ width: 50%;
 
 .remove-selected-item {
   font-size: 8px;
+  padding: 0;
 }
 
 .current-list {
-  width: 100%
+  width: 100%;
+  padding-left: 0;
 }
 
 .recipe-thumbnail {
-  width: 90%;
+  width: 50%;
   position: relative;
-  max-height: 100px;
+  max-height: 50px;
 }
 
 .thumbnail-title {
@@ -172,4 +187,49 @@ width: 50%;
 }
 .open {
   margin-bottom: 350px;
+}
+
+@media only screen and (min-width: 768px) {
+  .selected-recipes {
+    position: fixed;
+    margin: 0;
+    padding: 5px;
+    bottom: 0;
+    height: 160px;
+    width: 100%;
+    z-index: 100;
+    padding-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.37);
+  }
+
+  .generate-list-button {
+    display: inline-block;
+    position: absolute;
+    right: 10px;
+    top: 100px;
+  }
+
+  .selected-recipes-title {
+    margin: 0;
+    position: absolute;
+    top: 2px;
+    display: inline-block;
+    right: 10px;
+    color: white;
+  }
+
+  .list-thumbnails {
+    width: 16%;
+  }
+
+  .recipe-thumbnail {
+    width: 80%;
+    position: relative;
+    max-height: 100px;
+  }
+
+  .remove-selected-item {
+    font-size: 8px;
+    padding: 5px;
+  }
 }
