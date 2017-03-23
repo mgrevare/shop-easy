@@ -28,16 +28,18 @@
     </select>
     <label for="query">Have any allergies?</label>
     <input placeholder="gluten" type="text" class="js-allergies form-control">
-    <center><button class="search-button btn btn-embossed btn-primary" type="submit">Search</button></center>
+    <center><button data-loading-text="Loading..." class="search-button btn btn-embossed btn-primary" type="submit">Search</button></center>
 </form>
 </div>
 
-<div id="results-div" class="js-results"></div>
+<div id="results-div" class="js-results">
+</div>
 <div class="selected-recipes row">
   <div class="selected-recipes-container">
     <h5 class="selected-recipes-title">Current Menu</h5>
-    <ul class="current-list">
+    <ul class="current-list hidden-xs">
     </ul>
+    <button type="button" class="visible-xs view-current-menu-mobile btn btn-embossed btn-primary" data-toggle="modal" data-target="#exampleModalLong">View Menu</button>
     <button type="button" class="generate-list-button btn btn-embossed btn-primary" name="generate-list">Generate My Shopping List</button>
   </div>
 </div>
@@ -47,6 +49,26 @@
   <ul class="final-shopping-list">
   </ul>
   <button type="button" class="edit-button btn btn-embossed btn-primary" name="button">Edit my menu</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>

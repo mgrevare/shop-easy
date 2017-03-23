@@ -31,15 +31,14 @@ function getIngredients (identifier, callback) {
 function displaySearch(data) {
   var resultElement = "";
   data.results.forEach(function(item) {
-    resultElement +=  '<div class="recipe-card col-sm-4" id="' + item.id + '">' +
+    resultElement +=  '<div class="recipe-card col-sm-6 col-md-6 col-lg-4" id="' + item.id + '">' +
     '<h6 class="recipe-title">' + item.title + '</h6>' +
     '<img class="results-img center-block" src="https://webknox.com/recipeImages/' + item.image + '">' +
     '<p>Ready in ' + item.readyInMinutes + ' minutes!</p>' +
-    '<div class="recipe-card-actions center-block">' +
-    '<button class="expand-ingredients btn btn-embossed btn-primary">See ingredients</button>' +
-    '<button class="add-to-list btn btn-embossed btn-primary">Add recipe to shopping list</button>' +
+    '<div class="recipe-card-actions">' +
+    '<button type="button" class="expand-ingredients btn btn-xs btn-embossed btn-primary" data-toggle="modal" data-target="#exampleModalLong">View ingredients & Instructions</button>' +
+    '<button class="add-to-list btn btn-xs btn-embossed btn-primary">Add recipe to shopping list</button>' +
     '</div>' +
-    '<div class="ingredients-list" style="display: none;"><ul class="card-ingredients"></ul></div>' +
     '</div>'
   });
   $('.js-results').html(resultElement);
@@ -47,17 +46,15 @@ function displaySearch(data) {
 
 function displayIngredients(data) {
   var resultElement = "";
-  var elementID = "#" + data.id;
-  console.log(elementID);
+  var elementID = $('.modal-body');
+  console.log(data);
   data.extendedIngredients.forEach(function(item) {
     resultElement += '<li class="ingredients-list-card">' +
     item.originalString + '</li>'
   });
-  $(elementID).children().children('.card-ingredients').html(resultElement);
-};
-
-function showIngredients (element) {
-    $(element).slideToggle('fast');
+  resultElement += '<h5>Instructions:</h5>' + data.instructions;
+  $('.modal-title').text(data.title);
+  elementID.html(resultElement);
 };
 
 function addToList(data) {
@@ -74,6 +71,20 @@ function addToList(data) {
   displaySelectedItem();
   console.log(data);
 };
+
+function displayCurrentList() {
+  resultElement = "";
+  var elementID = $('.modal-body');
+  state.shoppingList.forEach(function(item) {
+    resultElement += '<li class="list-item">' +
+    '<h3>' + item.name + '</h3>' +
+    '</li>'
+  })
+
+  $('.modal-title').text("Current Menu");
+  elementID.html(resultElement);
+
+}
 
 function removeFromList(itemName) {
   state.shoppingList.forEach(function(item) {
@@ -119,6 +130,13 @@ function displayShoppingList() {
 
 $('.recipe-search-form').submit(function(e){
   e.preventDefault();
+        var $btn = $(this).children("center").children();
+        console.log($(this).children("center").children());
+      $btn.button('loading');
+      // simulating a timeout
+      setTimeout(function () {
+          $btn.button('reset');
+      }, 1000);
   var query = $('.js-query').val();
   var allergies = $('.js-allergies').val();
   var typeOfCuisine = $('#type-of-cuisine-dropdown').val();
@@ -129,10 +147,7 @@ $('#results-div').on('click', '.expand-ingredients', function(event){
   event.preventDefault();
   var identifier = $(this).parent().parent().attr('id');
   var element = $(this).parent().siblings('.ingredients-list');
-  $(this).attr("class", "retract-ingredients btn btn-embossed btn-primary").text("Hide Ingredients");
-  $(this).parent().parent().toggleClass("open")
   getIngredients(identifier, displayIngredients);
-  showIngredients(element);
 });
 
 $('#results-div').on('click', '.add-to-list', function(event){
@@ -143,8 +158,7 @@ $('#results-div').on('click', '.add-to-list', function(event){
 
 $('#results-div').on('click', '.retract-ingredients', function(event) {
   $(this).parent().siblings('.ingredients-list').slideToggle('fast');
-  $(this).attr("class", "expand-ingredients btn btn-embossed btn-primary").text("See Ingredients");
-  $(this).parent().parent().toggleClass("open")
+  $(this).attr("class", "expand-ingredients btn btn-xs btn-embossed btn-primary").text("See Ingredients");
 });
 
 $('.selected-recipes').on('click', '.remove-selected-item', function(event) {
@@ -161,5 +175,10 @@ $('.shopping-list').on('click', '.edit-button', function(event) {
   $('.search-container, .selected-recipes, .js-results').removeClass('hidden');
   $('.shopping-list').addClass('hidden');
 });
+
+$('.view-current-menu-mobile').click(function(event) {
+  event.preventDefault;
+  displayCurrentList();
+})
 
 });
